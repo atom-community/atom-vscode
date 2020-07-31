@@ -13,11 +13,7 @@ import { Disposable, TextEditor, TextBuffer as TextEditorEdit } from "atom";
  * @param thisArg The `this` context used when invoking the handler function.
  * @return Disposable which unregisters this command on disposal.
  */
-export function registerCommand(
-  command: string,
-  callback: (...args: any[]) => any,
-  thisArg?: any
-): Disposable {
+export function registerCommand(command: string, callback: (...args: any[]) => any, thisArg?: any): Disposable {
   const target = "atom-workspace"; // TODO what should be the target?
   return atom.commands.add(target, command, callback);
 }
@@ -38,11 +34,7 @@ export function registerCommand(
  */
 export function registerTextEditorCommand(
   command: string,
-  callback: (
-    textEditor: TextEditor,
-    edit: TextEditorEdit,
-    ...args: any[]
-  ) => void,
+  callback: (textEditor: TextEditor, edit: TextEditorEdit, ...args: any[]) => void,
   thisArg?: any
 ): Disposable {
   const target = "atom-text-editor";
@@ -64,10 +56,7 @@ export function registerTextEditorCommand(
  * @return A thenable that resolves to the returned value of the given command. `undefined` when
  * the command handler function doesn't return anything.
  */
-export function executeCommand<T>(
-  command: string,
-  ...rest: any[]
-): Thenable<T | undefined> {
+export function executeCommand<T>(command: string, ...rest: any[]): Thenable<T | undefined> {
   let target;
   const prefix = command.split(".")[0];
   if (prefix === "vscode") {
