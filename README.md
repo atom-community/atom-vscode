@@ -18,6 +18,4 @@ npm install atom-vscode
 Add the mostly used API
 
 ## Contributing
-
-- Let me know if you encounter any bugs.
-- Feature requests are always welcome.
+The most used API are added by going through [`@types/vscode`](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/vscode/index.d.ts) functions and writing their Atom equivalent as a function with the same name. The goal is to be as close as possible, but there maybe differences that cannot covered by this package.
