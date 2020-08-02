@@ -13,10 +13,16 @@ Atom with VSCode API! This allows using VSCode extensions directly in Atom.
 npm install atom-vscode
 ```
 
-## Roadmap
+## Roadmap and Contributing
+The goal is write wrappers to provide VSCode API in Atom. This allows using the VSCode extensions.
 
-Add the mostly used API
+The most used API are added by going through [`@types/vscode`](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/vscode/index.d.ts) functions and writing their Atom equivalent as  functions with the same name. The goal is to be as close as possible, but there maybe differences that cannot covered by this package.
 
-## Contributing
+Here is also the documentation for the API
+https://code.visualstudio.com/api/references/vscode-api
 
-The most used API are added by going through [`@types/vscode`](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/vscode/index.d.ts) functions and writing their Atom equivalent as a function with the same name. The goal is to be as close as possible, but there maybe differences that cannot covered by this package.
+The most important functions are under `window` and `workspace` namespace
+https://code.visualstudio.com/api/references/vscode-api#window
+https://code.visualstudio.com/api/references/vscode-api#workspace
+
+`atom-ide-base` is added as the dependency of this package, which installs all the IDE packages to provide the functionality of Linter, Datatip, Terminal, etc.
