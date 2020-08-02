@@ -86,3 +86,13 @@ export function executeCommand<T>(command: string, ...rest: any[]): Thenable<T |
 function getWorkspaceTarget() {
   return atom.views.getView(atom.workspace);
 }
+
+function getActiveEditorTarget() {
+  let target
+  const editor = atom.workspace.getActiveTextEditor();
+  if (editor) {
+    target = atom.views.getView(editor);
+  }
+  return target
+}
+
