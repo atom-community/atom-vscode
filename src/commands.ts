@@ -74,3 +74,15 @@ export function executeCommand<T>(command: string, ...rest: any[]): Thenable<T |
   return atom.commands.dispatch(target, command);
 }
 
+
+/*
+██    ██ ████████ ██ ██      ███████
+██    ██    ██    ██ ██      ██
+██    ██    ██    ██ ██      ███████
+██    ██    ██    ██ ██           ██
+ ██████     ██    ██ ███████ ███████
+*/
+
+function getWorkspaceTarget() {
+  return atom.views.getView(atom.workspace);
+}
