@@ -67,7 +67,7 @@ export function executeCommand<T>(command: string, ...rest: any[]): Thenable<T |
     // editor target
     target = getActiveEditorTarget()
   } else {
-    if (atom.commands.registeredCommands[command]) {
+    if (isCommandRegistered(command)) {
       // Considering a workspace command
       target = getWorkspaceTarget()
     } else {
@@ -110,3 +110,7 @@ function getCommandParts(command: string) {
   return [prefix, suffix];
 }
 
+
+export function isCommandRegistered(command: string) {
+  return atom.commands.registeredCommands[command]
+}
