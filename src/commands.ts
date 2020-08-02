@@ -1,3 +1,5 @@
+// TODO fix types
+
 // import {Disposable, TextEditor, TextEditorEdit} from "vscode";
 import { Disposable, TextEditor, TextBuffer as TextEditorEdit } from "atom";
 
