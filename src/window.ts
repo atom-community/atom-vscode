@@ -9,4 +9,11 @@ export const window = {
   get activeTextEditor(): TextEditor | undefined {
     return atom.workspace.getActiveTextEditor();
   },
+
+  /**
+   * The currently visible editors or an empty array.
+   */
+  get visibleTextEditors(): TextEditor[] {
+    return atom.workspace.getTextEditors();
+  },
 };
