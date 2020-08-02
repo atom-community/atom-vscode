@@ -41,3 +41,11 @@ export const version: string = atom.getVersion();
  * ```
  */
 export * as commands from "./commands";
+
+
+/**
+ * Namespace for dealing with the current window of the editor. That is visible
+ * and active editors, as well as, UI elements to show messages, selections, and
+ * asking for user input.
+ */
+export {window} from "./window"
