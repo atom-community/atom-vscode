@@ -58,19 +58,26 @@ export function registerTextEditorCommand(
  */
 export function executeCommand<T>(command: string, ...rest: any[]): Thenable<T | undefined> {
   let target;
-  const prefix = command.split(".")[0];
+  let [prefix, _] = getCommandParts(command);
+  // determine real target
   if (prefix === "vscode") {
-    target = atom.views.getView(atom.workspace);
+    // workspace target
+    target = getWorkspaceTarget()
   } else if (prefix === "editor") {
-    const editor = atom.workspace.getActiveTextEditor();
-    if (editor) {
-      target = atom.views.getView(editor);
+    // editor target
+    target = getActiveEditorTarget()
+  } else {
+    if (atom.commands.registeredCommands[command]) {
+      // Considering a workspace command
+      target = getWorkspaceTarget()
+    } else {
+      console.error("command not found", command);
     }
   }
-  // else search for the command
   if (rest) {
     console.warn("rest parameters are not supported.");
   }
+  // TODO the return is always void
   return atom.commands.dispatch(target, command);
 }
 
