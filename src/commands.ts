@@ -96,3 +96,10 @@ function getActiveEditorTarget() {
   return target
 }
 
+function getCommandParts(command: string) {
+  const commandParts = command.split(".");
+  const prefix = commandParts[0];
+  const suffix = commandParts[1];
+  return [prefix, suffix];
+}
+
