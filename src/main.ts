@@ -3,7 +3,6 @@
  */
 export const version: string = atom.getVersion();
 
-
 /**
  * Namespace for dealing with commands. In short, a command is a function with a
  * unique identifier. The function is sometimes also called _command handler_.
@@ -42,10 +41,9 @@ export const version: string = atom.getVersion();
  */
 export * as commands from "./commands";
 
-
 /**
  * Namespace for dealing with the current window of the editor. That is visible
  * and active editors, as well as, UI elements to show messages, selections, and
  * asking for user input.
  */
-export {window} from "./window"
+export { window } from "./window";

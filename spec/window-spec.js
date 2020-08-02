@@ -4,6 +4,6 @@ import { window } from "../dist/main.js";
 
 describe("Window", () => {
   it("gives the active text editor", () => {
-    expect(window.activeTextEditor).toBe(atom.workspace.getActiveTextEditor())
+    expect(window.activeTextEditor).toBe(atom.workspace.getActiveTextEditor());
   });
 });

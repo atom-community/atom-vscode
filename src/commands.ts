@@ -64,14 +64,14 @@ export function executeCommand<T>(command: string, ...rest: any[]): Thenable<T |
   // determine real target
   if (prefix === "vscode") {
     // workspace target
-    target = getWorkspaceTarget()
+    target = getWorkspaceTarget();
   } else if (prefix === "editor") {
     // editor target
-    target = getActiveEditorTarget()
+    target = getActiveEditorTarget();
   } else {
     if (isCommandRegistered(command)) {
       // Considering a workspace command
-      target = getWorkspaceTarget()
+      target = getWorkspaceTarget();
     } else {
       console.error("command not found", command);
     }
@@ -92,11 +92,10 @@ export function executeCommand<T>(command: string, ...rest: any[]): Thenable<T |
  */
 export function getCommands(filterInternal?: boolean): Thenable<string[]> {
   if (filterInternal) {
-    console.warn("filterInternal is not supported")
+    console.warn("filterInternal is not supported");
   }
-  return Object.keys(atom.commands.registeredCommands)
+  return Object.keys(atom.commands.registeredCommands);
 }
-
 
 /*
 ██    ██ ████████ ██ ██      ███████
@@ -111,12 +110,12 @@ function getWorkspaceTarget() {
 }
 
 function getActiveEditorTarget() {
-  let target
+  let target;
   const editor = atom.workspace.getActiveTextEditor();
   if (editor) {
     target = atom.views.getView(editor);
   }
-  return target
+  return target;
 }
 
 function getCommandParts(command: string) {
@@ -126,7 +125,6 @@ function getCommandParts(command: string) {
   return [prefix, suffix];
 }
 
-
 export function isCommandRegistered(command: string) {
-  return atom.commands.registeredCommands[command]
+  return atom.commands.registeredCommands[command];
 }
