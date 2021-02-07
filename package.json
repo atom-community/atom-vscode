@@ -9,7 +9,9 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write .",
+    "test.format": "prettier . --check",
     "lint": "eslint . --fix",
+    "test.lint": "eslint .",
     "test": "atom --test spec",
     "clean": "shx rm -rf dist",
     "tsc": "tsc -p src/tsconfig.json || echo done",
