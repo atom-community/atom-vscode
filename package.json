@@ -27,8 +27,8 @@
     "atom": ">=0.174.0 <2.0.0"
   },
   "dependencies": {
-    "@types/vscode": "^1.55.0",
-    "@types/atom": "1.40.10"
+    "@types/vscode": "^1.58.1",
+    "@types/atom": "1.40.11"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
