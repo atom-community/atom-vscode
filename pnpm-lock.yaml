@@ -16,7 +16,7 @@ importers:
       jasmine: ^3.7.0
       npm-check-updates: latest
       prettier: ^2.2.1
-      rollup: 2.56.2
+      rollup: 2.57.0
       rollup-plugin-atomic: ^3.0.0
       shx: latest
       tslib: ^2.1.0
@@ -33,9 +33,9 @@ importers:
       eslint: 7.32.0
       eslint-config-atomic: 1.12.5_eslint@7.32.0
       jasmine: 3.7.0
-      npm-check-updates: 11.8.3
+      npm-check-updates: 11.8.5
       prettier: 2.2.1
-      rollup: 2.56.2
+      rollup: 2.57.0
       rollup-plugin-atomic: 3.0.1_@types+node@16.4.1
       shx: 0.3.3
       tslib: 2.1.0
@@ -461,11 +461,6 @@ packages:
     resolution: {integrity: sha512-jnqIUKDUqJbDIUxm0Uj7bnlMnRm1T/eZ9N+AVMqhPgzrba2GhGG5o/jCTwmdPK709nEZsGoMzXEDUjcXHa3W0g==}
     dev: true
 
-  /@types/jasmine/3.6.7:
-    resolution: {integrity: sha512-8dtfiykrpe4Ysn6ONj0tOjmpDIh1vWxPk80eutSeWmyaJvAZXZ84219fS4gLrvz05eidhp7BP17WVQBaXHSyXQ==}
-    dev: true
-    optional: true
-
   /@types/jasmine/3.6.9:
     resolution: {integrity: sha512-B53NIwMj/AO0O+xfSWLYmKB0Mo6TYxfv2Mk8/c1T2w/e38t55iaPR6p7pHXTTtqfTmevPK3i8T1YweYFTZlxDw==}
     dev: true
@@ -781,6 +776,7 @@ packages:
   /assemblyscript/0.18.12:
     resolution: {integrity: sha512-a0zJlb4xgEtxdadrrIP9MuLmQuRE6ZVzXPi2RZoVG6zgz+nLYLt1mkiP/TbJRY+4wvf1peTCZok+vyRAxFjppQ==}
     hasBin: true
+    requiresBuild: true
     dependencies:
       binaryen: 98.0.0-nightly.20210106
       long: 4.0.0
@@ -836,7 +832,7 @@ packages:
       underscore-plus: 1.7.0
     optionalDependencies:
       '@types/atom': 1.40.10
-      '@types/jasmine': 3.6.7
+      '@types/jasmine': 3.6.9
     dev: true
 
   /aws-sign2/0.7.0:
@@ -965,7 +961,7 @@ packages:
     dependencies:
       ansi-align: 3.0.0
       camelcase: 6.2.0
-      chalk: 4.1.1
+      chalk: 4.1.2
       cli-boxes: 2.2.1
       string-width: 4.2.0
       type-fest: 0.20.2
@@ -1093,6 +1089,14 @@ packages:
 
   /chalk/4.1.1:
     resolution: {integrity: sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==}
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: 4.2.1
+      supports-color: 7.1.0
+    dev: true
+
+  /chalk/4.1.2:
+    resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
     dependencies:
       ansi-styles: 4.2.1
@@ -1518,6 +1522,7 @@ packages:
 
   /encoding/0.1.13:
     resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
+    requiresBuild: true
     dependencies:
       iconv-lite: 0.6.2
     dev: true
@@ -2140,6 +2145,7 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     deprecated: '"Please update to latest v2.3 or v2.2"'
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -2147,6 +2153,7 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -3253,12 +3260,12 @@ packages:
       npm-normalize-package-bin: 1.0.1
     dev: true
 
-  /npm-check-updates/11.8.3:
-    resolution: {integrity: sha512-NslIB6Af7GagVrN+bvBkObLyawIZfOnDnl8n9MHE+dFt0aChRYtvR6T2BLJKzOPIepCLmmh0NRR/qha0ExAELQ==}
+  /npm-check-updates/11.8.5:
+    resolution: {integrity: sha512-IYSHjlWe8UEugDy7X0qjBeJwcni4DlcWdBK4QQEbwgkNlEDlXyd4yQJYWFumKaJzrp/n5/EcvaboXsBD1Er/pw==}
     engines: {node: '>=10.17'}
     hasBin: true
     dependencies:
-      chalk: 4.1.1
+      chalk: 4.1.2
       cint: 8.2.1
       cli-table: 0.3.6
       commander: 6.2.1
@@ -4097,6 +4104,14 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /rollup/2.57.0:
+    resolution: {integrity: sha512-bKQIh1rWKofRee6mv8SrF2HdP6pea5QkwBZSMImJysFj39gQuiV8MEPBjXOCpzk3wSYp63M2v2wkWBmFC8O/rg==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
@@ -4639,7 +4654,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       boxen: 5.0.0
-      chalk: 4.1.1
+      chalk: 4.1.2
       configstore: 5.0.1
       has-yarn: 2.1.0
       import-lazy: 2.1.0
